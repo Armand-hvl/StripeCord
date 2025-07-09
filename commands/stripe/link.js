@@ -233,6 +233,8 @@ module.exports = {
                 .replace('{roles_text}', roleIdsText);
                 
             const accessGranted = new EmbedBuilder()
+                .setTitle(lang.commands.stripe.link.embedAccessGrantedTitle)
+                .setThumbnail(lang.commands.stripe.link.embedAccessGrantedThumbnail)
                 .setDescription(embedAccessGrantedDescription)
                 .setFooter({ text: lang.commands.stripe.link.embedAccessGrantedFooter})
                 .setColor('#C4F086');

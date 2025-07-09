@@ -182,6 +182,8 @@ module.exports = {
                 .replace('{roles_text}', roleIdsText);
                 
             const accessGranted = new EmbedBuilder()
+                .setTitle(lang.commands.stripe.link.embedAccessGrantedTitle)
+                .setThumbnail(lang.commands.stripe.link.embedAccessGrantedThumbnail)
                 .setDescription(accessGrantedDescription)
                 .setFooter({ text: lang.interactions.stripe_email_modal.embedAccessGrantedFooter})
                 .setColor('#C4F086');

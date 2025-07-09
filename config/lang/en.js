@@ -10,6 +10,10 @@ module.exports = {
                 embedTitle: `${process.env.SUBSCRIPTION_NAME} - Account Linking`,
                 embedDescription: "Click the button below to link your Stripe account email with your Discord account.\n\nThis will give you access to subscriber-only content and features.",
                 embedFooter: "You can also use the /link command directly with your email.",
+                embedAuthor: {
+                    name: "Subscription | Info",
+                    iconURL: "https://cdn-icons-png.flaticon.com/512/3858/3858448.png"
+                },
                 buttonLinkLabel: "Link Stripe Account",
                 buttonPortalLabel: "Manage Subscriptions",
                 slashCommandInteraction: "Wohoo! Setup button message sent."
@@ -88,7 +92,9 @@ module.exports = {
                 logsResyncAccount: ":repeat: **{member_tag}** ({member_id}, <@{member_id}>) used link to resync their account with: `{customer_email}`.\n{roles_text}",
                 logsLinkedAccount: ":link: **{member_tag}** ({member_id}, <@{member_id}>) linked their account with: `{customer_email}`.\n{roles_text}",
                 embedAccessGrantedDescription: ":white_check_mark: | Woohoo! Your account has been **linked successfully**.\n\n{roles_text}",
-                embedAccessGrantedFooter: "Now your Discord privileges are automatically renewed."
+                embedAccessGrantedFooter: "Now your Discord privileges are automatically renewed.",
+                embedAccessGrantedThumbnail: "https://cdn-icons-png.flaticon.com/512/3858/3858448.png",
+                embedAccessGrantedTitle: "Access's Granted"
             },
             unlink: {
                 slashCommandDescription: "Unlink your Stripe Account from your Discord Account and remove all roles.",
@@ -144,7 +150,9 @@ module.exports = {
             logsResyncAccount: ":repeat: **{member_tag}** ({member_id}, <@{member_id}>) used link to resync their account with: `{customer_email}`. {roles_text}",
             logsLinkedAccount: ":link: **{member_tag}** ({member_id}, <@{member_id}>) linked their account with: `{customer_email}`. {roles_text}",
             embedAccessGrantedDescription: ":white_check_mark: | Woohoo! Your account has been **linked successfully**. {roles_text}",
-            embedAccessGrantedFooter: "Now your Discord privileges are automatically renewed."
+            embedAccessGrantedFooter: "Now your Discord privileges are automatically renewed.",
+            embedAccessGrantedThumbnail: "https://cdn-icons-png.flaticon.com/512/3858/3858448.png",
+            embedAccessGrantedTitle: "Access's Granted"
         },
         stripe_link_button: {
             modalTitle: "Link your Stripe Account",
