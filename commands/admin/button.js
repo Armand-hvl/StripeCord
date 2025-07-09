@@ -19,6 +19,10 @@ module.exports = {
             .setTitle(lang.commands.admin.button.embedTitle)
             .setDescription(lang.commands.admin.button.embedDescription)
             .setColor('#73a3c1')
+            .setAuthor({
+                name: lang.commands.admin.button.embedAuthor.name,
+                iconURL: lang.commands.admin.button.embedAuthor.iconURL,
+            })
             .setFooter({ text: lang.commands.admin.button.embedFooter });
 
         // Create the button
