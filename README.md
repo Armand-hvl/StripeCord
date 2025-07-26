@@ -4,10 +4,9 @@ StripeCord is a simple, free solution to seamlessly integrate Stripe and Discord
 
 ## :warning: StripeCord v2.4 is now available!
 
-### 🧪 Release Notes  
-- This is the first **Release Version** of **V2** (the last Release Candidate). Breaking errors may occur but unlikely.
+### 🧪 Release Notes
 
-StripeCord v2.4 is a major packed with improvements, new features, and refactoring to ensure greater stability, control, and easier configuration, you can check more about this release in the updates section, [click here](https://github.com/Rodaviva29/StripeCord/releases/tag/v2.3).
+StripeCord v2.4 is a major packed with improvements, new features, and refactoring to ensure greater stability, control, and easier configuration, you can check more about this release in the updates section, [click here](https://github.com/Rodaviva29/StripeCord/releases/tag/v2.4).
 
 If anyone would like to help the project, I would be grateful if you could make PRs or create a issue for enhancement features or bugs found. Any [Ko-Fis](https://ko-fi.com/rodaviva) given would be greatly welcome to allow me to continue to mantain this project development.
 
