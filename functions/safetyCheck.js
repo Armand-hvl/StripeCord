@@ -1,3 +1,5 @@
+// Supress Normal Safety Check without New information
+const { MessageFlags } = require('discord.js');
 /**
  * Safety check function to remove roles from users who have roles but aren't registered in the database
  * This helps prevent unauthorized access by ensuring only users in the database have access roles
@@ -112,6 +114,9 @@ module.exports = async function safetyCheck(client) {
         
         logsChannel.send(`${message}\n\n${summary}`);
     } else if (logsChannel) {
-        logsChannel.send(lang.functions.safetyCheck.logNoUnauthorized);
+        logsChannel.send({
+          content: lang.functions.safetyCheck.logNoUnauthorized,
+          flags: MessageFlags.SuppressNotifications
+        });
     }
 };
