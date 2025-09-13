@@ -3,15 +3,16 @@
 StripeCord is a simple, free solution to seamlessly integrate Stripe and Discord. It connects directly to the Stripe API, with no extra fees involved. All your customers need to do is enter the email address they used for their Stripe subscription via a Discord command, and they’ll get instant access. Plus, the bot automatically checks every X hours to ensure all subscriptions are still valid.
 
 ## StripeCord v2.4 is now available!
-
-### 🧪 Release Notes
-
 StripeCord v2.4 is a major packed with improvements, new features, and refactoring to ensure greater stability, control, and easier configuration, you can check more about this release in the updates section, [click here](https://github.com/Rodaviva29/StripeCord/releases/tag/v2.4).
 
 If anyone would like to help the project, I would be grateful if you could make PRs or create a issue for enhancement features or bugs found. Any [Ko-Fis](https://ko-fi.com/rodaviva) given would be greatly welcome to allow me to continue to mantain this project development.
-> Backlog Feature: Allow webhooks instead of permsSync to speed up the process and reduce API requests.
+> 🧪 Backlog Feature: Allow webhooks instead of permsSync to speed up the process and reduce API requests.
 
 ---
+
+## 🤝 Sponsor [Subscord](https://subscord.com/?ref=stripecord)
+
+StripeCord is an open-source Discord bot that lets you sell memberships and roles using **Stripe**. While the bot is free and open-source, hosting, configuring, and managing subscriptions can be challenging for beginners. Since I receive a lot of questions that I can’t always answer individually, I recommend using [Subscord](https://subscord.com/?ref=stripecord) — a full-featured service that lets you turn your community into a paid one in just a few clicks, with low fees and automated role management.
 
 ## Wiki / Documentation
 
