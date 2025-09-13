@@ -13,10 +13,6 @@ If anyone would like to help the project, I would be grateful if you could make 
 
 ---
 
-## 🤝 Sponsor [Subscord](https://subscord.com)
-
-StripeCord is an open-source Discord bot that lets you sell memberships and roles using **Stripe**. While the bot is free and open-source, hosting, configuring, and managing subscriptions can be challenging for beginners. Since I receive a lot of questions that I can’t always answer individually, I recommend using [Subscord](https://subscord.com) — a full-featured service that lets you turn your community into a paid one in just a few clicks, with low fees and automated role management.
-
 ## Wiki / Documentation
 
 Please check the [Wiki / Docs](https://github.com/Rodaviva29/StripeCord/wiki) to get started with this project and to see all the awesome features.
