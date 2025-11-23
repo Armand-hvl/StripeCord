@@ -70,13 +70,12 @@ module.exports = async function permsCheck(client) {
 
     const customers = await collection.find({}).toArray();
     const guild = client.guilds.cache.get(process.env.GUILD_ID);
-    await guild.members.fetch();
 
     for (const customer of customers) {
         if (!customer.email) continue;
 
         console.log(`[Account Verification] Checking: ${customer.email}`);
-        const member = guild.members.cache.get(customer.discordId);
+        const member = await guild.members.fetch(customer.discordId);
 
         // If member is not in the guild, delete them from the database
         if (!member) {

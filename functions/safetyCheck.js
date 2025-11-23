@@ -56,49 +56,45 @@ module.exports = async function safetyCheck(client) {
     
     // Track statistics
     let unauthorizedUsers = 0;
-    let processedMembers = 0;
     let unauthorizedUsersList = [];
-    
-    // Check each member with any of the roles
-    for (const [memberId, member] of guild.members.cache) {
-        // Skip bots
-        if (member.user.bot) continue;
-        
-        // Check if member has any of the roles to check
-        const hasRolesToCheck = member.roles.cache.some(role => rolesToCheck.includes(role.id));
-        
-        if (hasRolesToCheck) {
-            processedMembers++;
-            
+
+    for (const roleId of rolesToCheck) {
+        // Get the role object (with members) from the guild with the given roleId
+        const role = guild.roles.cache.get(roleId);
+        if (!role) {
+            console.log(`[Safety Check] Role not found: ${roleId}`);
+            continue;
+        }
+
+        // Process only members who have this role
+        for (const [memberId, member] of role.members) {
+            if (member.user.bot) continue;
+
             // Check if member is in the database
             const userInDb = await collection.findOne({ discordId: memberId });
-            
+
             if (!userInDb) {
                 // User has roles but is not in the database - unauthorized access
                 unauthorizedUsers++;
+
                 unauthorizedUsersList.push({
                     id: memberId,
                     tag: member.user.tag,
                     mention: `<@${memberId}>`
                 });
-                
-                console.log(`[Safety Check] Unauthorized role holder found: ${member.user.tag} (${memberId})`);
-                
-                // Remove the roles
-                for (const roleId of rolesToCheck) {
-                    if (member.roles.cache.has(roleId)) {
-                        await member.roles.remove(roleId).catch(error => {
-                            console.error(`[Safety Check] Error removing role ${roleId} from ${member.user.tag}:`, error);
-                        });
-                    }
-                }
+
+                console.log(`[Safety Check] Unauthorized user detected: ${member.user.tag} (${memberId})`);
+
+                // Remove only the role involved in this iteration
+                await member.roles.remove(roleId).catch(error => {
+                    console.error(`[Safety Check] Error removing role ${roleId} from ${member.user.tag}:`, error);
+                });
             }
         }
     }
     
     // Log the results
-    console.log(`[Safety Check] Completed. Processed ${processedMembers} members with roles.`);
-    console.log(`[Safety Check] Found ${unauthorizedUsers} unauthorized role holders.`);
+    console.log(`[Safety Check] Completed. Found ${unauthorizedUsers} unauthorized role holders.`);
     
     // Send a message to the logs channel
     const logsChannel = guild.channels.cache.get(process.env.LOGS_CHANNEL_ID);
