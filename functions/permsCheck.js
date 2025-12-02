@@ -75,22 +75,28 @@ module.exports = async function permsCheck(client) {
         if (!customer.email) continue;
 
         console.log(`[Account Verification] Checking: ${customer.email}`);
-        const member = await guild.members.fetch(customer.discordId);
 
-        // If member is not in the guild, delete them from the database
-        if (!member) {
-            console.log(`[Account Verification] Customer not in the guild: ${customer.email}. Deleting from database.`);
-            
-            // Delete the customer from the database
-            await collection.deleteOne({ _id: customer._id });
-            
-            // Log the deletion to the logs channel
-            guild.channels.cache.get(process.env.LOGS_CHANNEL_ID).send(lang.functions.permsCheck.logCustomerNotInGuild
-                .replace('{email}', customer.email)
-                .replace(/{user_id}/g, customer.discordId));                
-            console.log(`[Account Verification] Successfully deleted customer: ${customer.email} from database.`);
+        let member = null;
 
-            continue;
+        try {
+            member = await guild.members.fetch(customer.discordId);
+        } catch (err) {
+            if (err.code === 10007) {
+                // If member is not in the guild, delete them from the database
+                console.log(`[Account Verification] Customer not in the guild: ${customer.email}. Deleting from database.`);
+
+                await collection.deleteOne({ _id: customer._id });
+
+                // Log the deletion to the logs channel
+                guild.channels.cache.get(process.env.LOGS_CHANNEL_ID).send(
+                    lang.functions.permsCheck.logCustomerNotInGuild
+                        .replace('{email}', customer.email)
+                        .replace(/{user_id}/g, customer.discordId)
+                );
+
+                console.log(`[Account Verification] Successfully deleted customer ${customer.email} from database.`);
+                continue;
+            }
         }
 
         // Get all subscriptions for the user specific email

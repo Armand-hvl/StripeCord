@@ -32,9 +32,6 @@ module.exports = async function safetyCheck(client) {
         return;
     }
     
-    // Fetch all guild members
-    await guild.members.fetch();
-    
     // Get all role IDs that should be checked
     const rolesToCheck = [];
     
