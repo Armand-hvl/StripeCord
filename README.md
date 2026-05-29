@@ -1,4 +1,4 @@
-# **The Ultimate Discord Bot for Seamless Subscription Management with Stripe!**
+# **The Ultimate Discord Bot integration with Stripe!**
 
 StripeCord is a simple, free solution to seamlessly integrate Stripe and Discord. It connects directly to the Stripe API, with no extra fees involved. Your customers just enter the email they used for their Stripe subscription through a Discord command and get instant access.
 
@@ -11,6 +11,7 @@ StripeCord is a simple, free solution to seamlessly integrate Stripe and Discord
 - 🧹 **Self-healing**: safety check removes roles from unauthorized holders; inactivity check prunes stale entries.
 - 🗄️ **MongoDB-backed**: connects directly to the Stripe API, no middleman, no extra fees.
 
+<img width="1744" height="902" alt="banner" src="https://github.com/user-attachments/assets/a6b1d051-8627-45f8-9f1e-740f71762255" />
 
 **Safe Contributions!** 💸
 
