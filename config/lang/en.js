@@ -136,6 +136,9 @@ module.exports = {
             logSummary: 'Safety Check: Removed roles from **{count}** unauthorized users.',
             logNoUnauthorized: ':white_check_mark: Safety Check completed. No unauthorized role holders found.'
         },
+        webhook: {
+            logEventReceived: ':zap: Stripe webhook `{event_type}` received for `{email}`. Syncing roles.'
+        },
     },
     interactions: {
         stripe_email_modal: {
