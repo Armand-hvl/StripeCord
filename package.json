@@ -4,6 +4,9 @@
   "repository": "https://github.com/Rodaviva29/StripeCord.git",
   "author": "Rodaviva <mail@chung-jf.me> (https://chung-jf.me/)",
   "license": "MIT",
+  "engines": {
+  "node": "20.x"
+},
   "main": "index.js",
   "dependencies": {
     "discord.js": "^14.18.0",
