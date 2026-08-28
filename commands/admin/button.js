@@ -37,9 +37,14 @@ module.exports = {
            .setStyle(ButtonStyle.Link)
            .setURL(`${process.env.STRIPE_PORTAL_LINK}`);
 
+        const payButton = new ButtonBuilder()
+            .setLabel(lang.commands.admin.button.buttonPayLabel)
+            .setStyle(ButtonStyle.Link)
+            .setURL(`${process.env.STRIPE_PAYMENT_LINK}`);
+        
         // Add the buttons to an action row
         const row = new ActionRowBuilder()
-            .addComponents(linkButton, portalButton);
+            .addComponents(payButton, linkButton, portalButton);
 
         // Send the message with the button
         await interaction.reply({ content: lang.commands.admin.button.slashCommandInteraction, flags: "Ephemeral" });
