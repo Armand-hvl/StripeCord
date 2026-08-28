@@ -18,31 +18,28 @@ module.exports = {
         const embed = new EmbedBuilder()
             .setTitle(lang.commands.admin.button.embedTitle)
             .setDescription(lang.commands.admin.button.embedDescription)
-            .setColor('#73a3c1')
+            .setColor('#7C3AED')
             .setAuthor({
                 name: lang.commands.admin.button.embedAuthor.name,
                 iconURL: lang.commands.admin.button.embedAuthor.iconURL,
             })
             .setFooter({ text: lang.commands.admin.button.embedFooter });
 
-        // Create the button
-        const linkButton = new ButtonBuilder()
-            .setCustomId('stripe_link_button')
-            .setLabel(lang.commands.admin.button.buttonLinkLabel)
-            .setStyle(ButtonStyle.Primary);
-
-        // Create subscriptions portal button
-        const portalButton = new ButtonBuilder()
-           .setLabel(lang.commands.admin.button.buttonPortalLabel)
-           .setStyle(ButtonStyle.Link)
-           .setURL(`${process.env.STRIPE_PORTAL_LINK}`);
-
         const payButton = new ButtonBuilder()
             .setLabel(lang.commands.admin.button.buttonPayLabel)
             .setStyle(ButtonStyle.Link)
             .setURL(`${process.env.STRIPE_PAYMENT_LINK}`);
         
-        // Add the buttons to an action row
+        const linkButton = new ButtonBuilder()
+            .setCustomId('stripe_link_button')
+            .setLabel(lang.commands.admin.button.buttonLinkLabel)
+            .setStyle(ButtonStyle.Primary);
+        
+        const portalButton = new ButtonBuilder()
+            .setLabel(lang.commands.admin.button.buttonPortalLabel)
+            .setStyle(ButtonStyle.Link)
+            .setURL(`${process.env.STRIPE_PORTAL_LINK}`);
+        
         const row = new ActionRowBuilder()
             .addComponents(payButton, linkButton, portalButton);
 
