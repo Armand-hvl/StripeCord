@@ -164,11 +164,18 @@ module.exports = {
             emailInputPlaceholder: "ton.email@exemple.com"
         }
     },
-    events : {
+        events : {
         interactionCreate: {
             cooldownInteraction: "Please wait, you are on a cooldown for {commandName}. You can use it again {expiredTimestamp}.",
             errorCommand: "There was an error while executing this command!",
             errorInteraction: "There was an error while processing your interaction!"
+        },
+        guildMemberAdd: {
+            embedTitle: "Bienvenue chez ARWAY 👋",
+            embedDescription: "ARWAY t'accompagne pour réussir ton passage en école d'ingénieur (BUT → écoles d'ingé, GEI-UNIV).\n\nJette un œil au règlement, puis rejoins la communauté payante pour débloquer l'accès aux mentors et à l'entraide.\n\n💬 Une question avant de te lancer ? On est là.",
+            embedFooter: "L'équipe ARWAY",
+            buttonRulesLabel: "📜 Lire le règlement",
+            buttonJoinLabel: "💳 Rejoindre la communauté"
         }
     }
 };
