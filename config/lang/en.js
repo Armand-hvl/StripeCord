@@ -7,17 +7,17 @@ module.exports = {
         admin: {
             button: {
                 slashCommandDescription: "Poste le message d'inscription (paiement / liaison / gestion).",
-                embedTitle: `${process.env.SUBSCRIPTION_NAME} — Rejoindre`,
-                embedDescription: "1️⃣ Paie ton abonnement\n2️⃣ Reviens ici et clique sur \"Lier mon compte\"\n3️⃣ Accès débloqué instantanément",
-                embedFooter: "Tu peux aussi utiliser /link directement avec ton email.",
+                embedTitle: `${process.env.SUBSCRIPTION_NAME} - Rejoindre`,
+                embedDescription: "Paie ton abonnement puis clique sur le bouton pour lier ton compte Stripe à ton compte Discord.\n\nCela te donnera accès au contenu réservé aux membres.",
+                embedFooter: "Tu peux aussi utiliser la commande /link directement avec ton email.",
                 embedAuthor: {
-                    name: "ARWAY",
+                    name: "Abonnement | Infos",
                     iconURL: "https://cdn-icons-png.flaticon.com/512/3858/3858448.png"
                 },
-                buttonPayLabel: "💳 Payer maintenant",
-                buttonLinkLabel: "🔗 Lier mon compte",
-                buttonPortalLabel: "⚙️ Gérer mon abonnement",
-                slashCommandInteraction: "C'est fait, le message a été envoyé ! ✅"
+                buttonPayLabel: "Payer mon abonnement",
+                buttonLinkLabel: "Lier mon compte",
+                buttonPortalLabel: "Gérer mon abonnement",
+                slashCommandInteraction: "C'est fait, le message a été envoyé !"
             },
             link: {
                 slashCommandDescription: "Link your Stripe account email with your Discord account.",
