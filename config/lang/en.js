@@ -159,9 +159,9 @@ module.exports = {
             embedAccessGrantedTitle: "Access's Granted"
         },
         stripe_link_button: {
-            modalTitle: "Link your Stripe Account",
-            emailInputLabel: "Enter your Stripe Account Email",
-            emailInputPlaceholder: "your.email@example.com"
+            modalTitle: "Lier ton compte",
+            emailInputLabel: "Email utilisé pour payer",
+            emailInputPlaceholder: "ton.email@exemple.com"
         }
     },
     events : {
