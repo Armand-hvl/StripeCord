@@ -92,10 +92,9 @@ module.exports = {
                 logsNoAssignedRolesMap: "No roles assigned",
                 logsResyncAccount: ":repeat: **{member_tag}** ({member_id}, <@{member_id}>) used link to resync their account with: `{customer_email}`.\n{roles_text}",
                 logsLinkedAccount: ":link: **{member_tag}** ({member_id}, <@{member_id}>) linked their account with: `{customer_email}`.\n{roles_text}",
-                embedAccessGrantedDescription: ":white_check_mark: | Woohoo! Your account has been **linked successfully**.\n\n{roles_text}",
-                embedAccessGrantedFooter: "Now your Discord privileges are automatically renewed.",
-                embedAccessGrantedThumbnail: "https://cdn-icons-png.flaticon.com/512/3858/3858448.png",
-                embedAccessGrantedTitle: "Access's Granted"
+                embedAccessGrantedDescription: "Ton accès est débloqué, voici comment démarrer :\n\n🎓 Découvre tes mentors dans BUT → écoles d'ingé ou GEI-UNIV selon ta filière\n🎥 Le prochain live est annoncé dans #lives-et-replays\n🏆 Un classement mensuel récompense les membres les plus actifs — jusqu'au mois remboursé pour le premier ! Direction #classement-du-mois pour voir comment ça marche\n\nOn est ravis de t'avoir parmi nous 💜",
+                embedAccessGrantedTitle: "🎉 Bienvenue dans la communauté ARWAY !",
+                publicWelcomeMessage: "🎉 Bienvenue {member} parmi les membres ARWAY ! N'hésite pas à te présenter ici et à poser tes premières questions aux mentors.",
             },
             unlink: {
                 slashCommandDescription: "Unlink your Stripe Account from your Discord Account and remove all roles.",
@@ -153,8 +152,7 @@ module.exports = {
             logsNoAssignedRolesMap: "No roles assigned",
             logsResyncAccount: ":repeat: **{member_tag}** ({member_id}, <@{member_id}>) used link to resync their account with: `{customer_email}`. {roles_text}",
             logsLinkedAccount: ":link: **{member_tag}** ({member_id}, <@{member_id}>) linked their account with: `{customer_email}`. {roles_text}",
-            embedAccessGrantedDescription: ":white_check_mark: | Woohoo! Your account has been **linked successfully**. {roles_text}",
-            embedAccessGrantedFooter: "Now your Discord privileges are automatically renewed.",
+            embedAccessGrantedDescription: "Ton accès est débloqué, voici comment démarrer :\n\n🎓 Découvre tes mentors dans BUT → écoles d'ingé ou GEI-UNIV selon ta filière\n🎥 Le prochain live est annoncé dans #lives-et-replays\n🏆 Un classement mensuel récompense les membres les plus actifs — jusqu'au mois remboursé pour le premier ! Direction #classement-du-mois pour voir comment ça marche\n\nOn est ravis de t'avoir parmi nous 💜",
             embedAccessGrantedThumbnail: "https://cdn-icons-png.flaticon.com/512/3858/3858448.png",
             embedAccessGrantedTitle: "Access's Granted"
         },
