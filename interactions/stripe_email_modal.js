@@ -178,17 +178,20 @@ module.exports = {
                 logsChannel?.send(linkMessage);
             }
                 
-            const accessGrantedDescription = lang.interactions.stripe_email_modal.embedAccessGrantedDescription
-                .replace('{roles_text}', roleIdsText);
-                
             const accessGranted = new EmbedBuilder()
                 .setTitle(lang.commands.stripe.link.embedAccessGrantedTitle)
-                .setThumbnail(lang.commands.stripe.link.embedAccessGrantedThumbnail)
-                .setDescription(accessGrantedDescription)
-                .setFooter({ text: lang.interactions.stripe_email_modal.embedAccessGrantedFooter})
-                .setColor('#C4F086');
+                .setDescription(lang.interactions.stripe_email_modal.embedAccessGrantedDescription)
+                .setColor('#7C3AED');
 
             await interaction.editReply({ embeds: [accessGranted], flags: "Ephemeral" });
+
+            // Ping public pour que la communauté voie arriver le nouveau membre
+            const welcomeChannel = member.guild.channels.cache.get(process.env.PAID_WELCOME_CHANNEL_ID);
+            if (welcomeChannel) {
+                await welcomeChannel.send({
+                    content: lang.commands.stripe.link.publicWelcomeMessage.replace('{member}', `<@${member.id}>`)
+                });
+            }
         }
     },
 };
