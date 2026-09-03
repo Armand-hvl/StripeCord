@@ -229,18 +229,21 @@ module.exports = {
                 logsChannel?.send(logsLinkedAccount);
             }
             
-            const embedAccessGrantedDescription = lang.commands.stripe.link.embedAccessGrantedDescription
-                .replace('{roles_text}', roleIdsText);
-                
             const accessGranted = new EmbedBuilder()
                 .setTitle(lang.commands.stripe.link.embedAccessGrantedTitle)
-                .setThumbnail(lang.commands.stripe.link.embedAccessGrantedThumbnail)
-                .setDescription(embedAccessGrantedDescription)
-                .setFooter({ text: lang.commands.stripe.link.embedAccessGrantedFooter})
-                .setColor('#C4F086');
+                .setDescription(lang.commands.stripe.link.embedAccessGrantedDescription)
+                .setColor('#7C3AED');
 
             // Send the success message to the user who used the command in flags: "Ephemeral" mode
             await interaction.editReply({ embeds: [accessGranted], flags: "Ephemeral" });
+
+            // Ping public pour que la communauté voie arriver le nouveau membre
+            const welcomeChannel = member.guild.channels.cache.get(process.env.PAID_WELCOME_CHANNEL_ID);
+            if (welcomeChannel) {
+                await welcomeChannel.send({
+                    content: lang.commands.stripe.link.publicWelcomeMessage.replace('{member}', `<@${member.id}>`)
+                });
+            }
         }
     }
 };
