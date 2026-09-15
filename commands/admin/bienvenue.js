@@ -7,7 +7,7 @@ module.exports = {
 		.setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
 		.setDMPermission(false),
 
-	async execute(interaction) {
+	async execute(client, interaction) {
 		const embed = new EmbedBuilder()
 			.setColor('#7C3AED')
 			.setTitle('👋 Bienvenue dans la communauté ARWAY')
@@ -34,13 +34,13 @@ module.exports = {
 		try {
 			const channel = interaction.channel ?? (await interaction.guild.channels.fetch(interaction.channelId));
 			await channel.send({ embeds: [embed] });
-			await interaction.reply({ content: '✅ Embed de bienvenue envoyé.', ephemeral: true });
+			await interaction.reply({ content: '✅ Embed de bienvenue envoyé.', flags: 'Ephemeral' });
 		} catch (error) {
 			console.error(error);
 			await interaction.reply({
 				content:
 					"❌ Impossible d'envoyer l'embed ici. Vérifie que le rôle du bot a bien les permissions \"Voir le salon\", \"Envoyer des messages\" et \"Intégrer des liens\" dans ce canal.",
-				ephemeral: true,
+				flags: 'Ephemeral',
 			});
 		}
 	},
