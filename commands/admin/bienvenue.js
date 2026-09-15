@@ -22,7 +22,7 @@ module.exports = {
 						"Le serveur est découpé en trois grandes parties :\n\n" +
 						"**Général** — les canaux communs à tout le monde : annonces, entraide générale, classement du mois, ressources générales et les lives.\n\n" +
 						"**BUT** — dédiée aux candidats en admissions parallèles depuis un BUT, avec ton mentor Axel, un canal de discussion générale et des canaux par filière (GMP, GEII, MP, autres).\n\n" +
-						"**GEI-Univ** — dédiée aux candidats en admissions parallèles depuis l'université, avec tes mentors Léna et Jesmine, un canal de discussion générale et des canaux par matière.",
+						"**GEI-Univ** — dédiée aux candidats en admissions parallèles depuis l'université, avec tes mentors Léna et Yesmine, un canal de discussion générale et des canaux par matière.",
 				},
 				{
 					name: '💡 Le petit conseil',
