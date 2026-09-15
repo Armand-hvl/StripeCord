@@ -37,7 +37,17 @@ module.exports = {
 			)
 			.setFooter({ text: "L'équipe ARWAY — Orientation par ceux qui l'ont vécue." });
 
-		await interaction.channel.send({ embeds: [embed] });
-		await interaction.reply({ content: '✅ Embed classement envoyé.', ephemeral: true });
+		try {
+			const channel = interaction.channel ?? (await interaction.guild.channels.fetch(interaction.channelId));
+			await channel.send({ embeds: [embed] });
+			await interaction.reply({ content: '✅ Embed classement envoyé.', ephemeral: true });
+		} catch (error) {
+			console.error(error);
+			await interaction.reply({
+				content:
+					"❌ Impossible d'envoyer l'embed ici. Vérifie que le rôle du bot a bien les permissions \"Voir le salon\", \"Envoyer des messages\" et \"Intégrer des liens\" dans ce canal.",
+				ephemeral: true,
+			});
+		}
 	},
 };
